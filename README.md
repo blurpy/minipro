@@ -105,7 +105,14 @@ To test that all the pins in the programmer works as intended, you can run a ful
 
 ### Update firmware
 
-You wont find the firmware as a standalone download, so you need to download the Windows software `Xgpro` from the homepage. Unrar the downloaded file to find a Windows executable. I have not found any software on Linux to extract the contents, but the website https://extract.me/ is able to. Download the file `updateII.dat` from the website after extraction.
+You wont find the firmware as a standalone download, so you need to download the Windows software `Xgpro` from the homepage. Unrar the downloaded file to find a Windows executable. Unrar the executable to find the firmware file `updateII.dat`.
+ 
+ ```
+$ unrar x XgproV1008_setup.rar
+$ unrar x XgproV1008_Setup.exe
+```
+ 
+It's also possible to extract the files using the website https://extract.me/
 
 Update the firmware like this:
 
