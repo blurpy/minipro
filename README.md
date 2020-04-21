@@ -117,3 +117,8 @@ It's also possible to extract the files using the website https://extract.me/
 Update the firmware like this:
 
 `$ minipro -F updateII.dat`
+
+
+#### Troubleshooting
+
+I tried to update the firmware using a virtual machine with Windows and the official Xgpro software once. The programmer was functioning fine in the VM, but updating the firmware failed with no reason given. The programmer did not function anymore after that. Any command issued with minipro gave me the message "_Found TL866II+ in bootloader mode_" and quit. After reading this [issue](https://gitlab.com/DavidGriffith/minipro/issues/148) it looked like the firmware update process in minipro is much more reliable than the official software, so I tested, and the update completed successfully, and the programmer was once again working. 
