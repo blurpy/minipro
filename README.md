@@ -91,8 +91,30 @@ lock_byte = 0xff
 
 Read the datasheet or use this http://www.engbedded.com/fusecalc/ to understand what this means.
 
-Like the examples from working with EEPROM, you can verify the contents with the `-m` parameter, and read the contents into a file with the `-r` parameter.
+Like the examples from working with EEPROM, you can verify the contents with the `-m` parameter, and read the contents into a file with the `-r` parameter:
 
+```
+$ minipro -p "ATMEGA328P@DIP28" -r firmware.bin
+Found TL866II+ 04.2.111 (0x26f)
+Chip ID OK: 0x1E950F
+Reading Code...  0.66Sec  OK
+Reading Data...  0.04Sec  OK
+Reading fuses... 0.00Sec  OK
+
+$ ls -la
+-rw-r--r--  1 blurpy users  32K jan.  22 20:12 firmware.bin
+-rw-r--r--  1 blurpy users 1,0K jan.  22 20:12 firmware.eeprom.bin
+-rw-r--r--  1 blurpy users   66 jan.  22 20:12 firmware.fuses.conf
+```
+
+Beware that the chip might appear completely empty if the fuses are configured for read protection. It will look like this:
+
+```
+$ hexdump firmware.bin 
+0000000 ffff ffff ffff ffff ffff ffff ffff ffff
+*
+0008000
+```
 
 ### Hardware verifications
 
