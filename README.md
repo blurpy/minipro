@@ -42,6 +42,12 @@ Start by finding the correct name of the device for use with the software. You c
 
 The concrete device could be a `ATMEGA328P@DIP28` in this case. Include this with the `-p` parameter for all future operations.
 
+Insert the chip with pin 1 (see the dot) pointing towards the lever of the ZIF socket:
+
+![Chip orientation in the TL866II Plus](resources/chip-orientation.png)
+
+(Image taken from the Windows software)
+
 
 ### Working with EEPROMs
 
