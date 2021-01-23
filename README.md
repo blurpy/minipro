@@ -46,7 +46,7 @@ Insert the chip with pin 1 (see the dot) pointing towards the lever of the ZIF s
 
 ![Chip orientation in the TL866II Plus](resources/chip-orientation.png)
 
-(Image taken from the Windows software)
+(_Image taken from the Windows software_)
 
 
 ### Working with EEPROMs
@@ -121,6 +121,54 @@ $ hexdump firmware.bin
 *
 0008000
 ```
+
+
+### Working with AVR using In Circuit Serial Programming (ICSP)
+
+The TL866II Plus has an ICSP port on the side of the unit that allows you to flash a chip without removing it from the circuit board. A cable for connecting to the port should also be in the box.
+
+This is the pinout:
+
+![ICSP connector on the TL866II Plus](resources/icsp-connection.png)
+
+(_Image taken from the Windows software_)
+
+Many Arduino devices come with a 6-pin ICSP header like this:
+
+![ICSP header](resources/icsp-header.png)
+
+Here is an example of connecting the TL866II Plus to an Arduino Nano clone (ks0173) using ICSP:
+
+![ICSP example connection](resources/ks0173-icsp.jpg)
+
+There are a couple of things to note:
+
+1. The pinout on different boards might not have the same orientation or order. Check with a multimeter to make sure you connect the wires correctly.
+2. The TL866II Plus outputs 5 volts on VCC. Some boards might only tolerate 3.3 volts and could fry. Power the board through other means to avoid that, or maybe try lowering the voltage using resistors (not tested).
+
+The commands are very similar to when you have a chip in the ZIF socket. You only need to add `-i`, like this:
+
+```
+$ minipro -p "ATMEGA328P@TQFP32" -r ks0173.bin -i
+Found TL866II+ 04.2.111 (0x26f)
+Activating ICSP...
+Chip ID OK: 0x1E950F
+Reading Code...  7.19Sec  OK
+Reading Data...  0.23Sec  OK
+Reading fuses... 0.00Sec  OK
+```
+
+Result:
+
+```
+$ ls -la
+-rw-r--r-- 1 blurpy users  32768 jan.  23 13:56 ks0173.bin
+-rw-r--r-- 1 blurpy users   1024 jan.  23 13:56 ks0173.eeprom.bin
+-rw-r--r-- 1 blurpy users     66 jan.  23 13:56 ks0173.fuses.conf
+```
+
+You can use `-I` instead of `-i` to use ICSP with VCC disabled.
+
 
 ### Hardware verifications
 
