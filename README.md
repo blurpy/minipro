@@ -108,9 +108,9 @@ Reading Data...  0.04Sec  OK
 Reading fuses... 0.00Sec  OK
 
 $ ls -la
--rw-r--r--  1 blurpy users  32K jan.  22 20:12 firmware.bin
--rw-r--r--  1 blurpy users 1,0K jan.  22 20:12 firmware.eeprom.bin
--rw-r--r--  1 blurpy users   66 jan.  22 20:12 firmware.fuses.conf
+-rw-r--r--  1 blurpy users  32768 jan.  22 20:12 firmware.bin
+-rw-r--r--  1 blurpy users   1024 jan.  22 20:12 firmware.eeprom.bin
+-rw-r--r--  1 blurpy users     66 jan.  22 20:12 firmware.fuses.conf
 ```
 
 Beware that the chip might appear completely empty if the fuses are configured for read protection. It will look like this:
