@@ -183,14 +183,19 @@ To test that all the pins in the programmer works as intended, you can run a ful
 
 ### Update firmware
 
-You wont find the firmware as a standalone download, so you need to download the Windows software `Xgpro` from the homepage. Unrar the downloaded file to find a Windows executable. Unrar the executable to find the firmware file `updateII.dat`.
+You wont find the firmware as a standalone download, so you need to download the Windows software `Xgpro` from the homepage. If the homepage is too slow, there is a mirror here: https://github.com/Kreeblah/XGecu_Software
+
+Unrar the downloaded file to find a Windows executable. Unrar the executable to find the firmware file `updateII.dat`. Both `unar` and `unrar` are examples of tools that can extract the files.
  
  ```
-$ unrar x XgproV1008_setup.rar
-$ unrar x XgproV1008_Setup.exe
+$ unar XgproV1181_Setup.rar
+$ unar XgproV1181_Setup.exe
 ```
- 
-It's also possible to extract the files using the website https://extract.me/
+
+ ```
+$ unrar x XgproV1181_Setup.rar
+$ unrar x XgproV1181_Setup.exe
+```
 
 Update the firmware like this:
 
