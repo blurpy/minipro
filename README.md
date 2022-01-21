@@ -185,17 +185,20 @@ To test that all the pins in the programmer works as intended, you can run a ful
 
 You wont find the firmware as a standalone download, so you need to download the Windows software `Xgpro` from the homepage. Unrar the downloaded file to find a Windows executable. Unrar the executable to find the firmware file `updateII.dat`.
  
- ```
-$ unrar x XgproV1008_setup.rar
-$ unrar x XgproV1008_Setup.exe
-```
- 
-It's also possible to extract the files using the website https://extract.me/
+#### Flash Firmware (for example v 4.2.128 for minipro v 0.5)
+You need the `unar` tool (this is NOT a typo, the tool is called UNAR - installation on linux using apt: $sudo apt-get install unar).
+
+`$ mkdir xgpro_1160 && cd xgpro_1160`
+
+`$ wget https://github.com/Kreeblah/XGecu_Software/raw/master/Xgpro/11/xgproV1160_setup.rar`
+
+`$ unar ./* && unar ./*.exe -D updateII*`
 
 Update the firmware like this:
 
 `$ minipro -F updateII.dat`
 
+This worked successfully on debian 11.
 
 #### Troubleshooting
 
