@@ -9,27 +9,7 @@ This repository is my notes on how to use it with a [TL866II Plus](http://www.xg
 
 ## Building
 
-The instructions in the readme on gitlab do not work on openSUSE.
-
-In addition to the regular build tools like `make` and `gcc`, I installed these packages:
-
-* `srecord`
-* `rpmdevtools`
-* `rpm-build` 
-* `libusb-1_0-devel`
-
-To build:
-
-1. `$ git clone https://gitlab.com/DavidGriffith/minipro/`
-2. Overwrite `minipro.spec` in the cloned repository with this one: [minipro.spec](rpm/minipro.spec)
-3. The spec file specifies a certain commit to build. Update the commit hash and date if you want to build a different version.
-4. If you haven't built rpms before, setup the directory structure with: `$ rpmdev-setuptree`
-5. `$ rpmdev-spectool -g -R minipro.spec`
-6. `$ rpmbuild -ba minipro.spec`
-
-After it completes you can find the rpm here, ready for installation with zypper: `~/rpmbuild/RPMS/x86_64/minipro-0.1-20200402.bf67708.x86_64.rpm`
-
-Remember to add yourself to the `plugdev` group.
+Build instructions for openSUSE have been added to the official repository and are no longer available here.
 
 
 ## How to use
